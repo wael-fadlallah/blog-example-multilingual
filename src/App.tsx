@@ -1,10 +1,14 @@
-import Navbar from "./Navbar/Index";
+import Navbar from "./components/Navbar/Index";
+import Footer from "./components/Footer/Index";
 
 function App() {
   return (
-    <div className="text-3xl font-bold underline">
-      <Navbar />
-    </div>
+    <>
+      <div className="content">
+        <Navbar />
+      </div>
+      <Footer />
+    </>
   );
 }
 
