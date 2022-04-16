@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
+import { useTranslation } from "react-i18next";
 
-function Nav() {
+export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,35 +23,35 @@ function Nav() {
                   href="#"
                   className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Dashboard
+                  {t("dashboard")}
                 </a>
 
                 <a
                   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Team
+                  {t("team")}
                 </a>
 
                 <a
                   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Projects
+                  {t("projects")}
                 </a>
 
                 <a
                   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Calendar
+                  {t("calendar")}
                 </a>
 
                 <a
                   href="#"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  Reports
+                  {t("reports")}
                 </a>
               </div>
             </div>
@@ -154,5 +156,3 @@ function Nav() {
     </nav>
   );
 }
-
-export default Nav;
