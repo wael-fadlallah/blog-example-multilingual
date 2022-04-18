@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
-
+import { useDispatch } from "react-redux";
+import { set } from "../../store/reducers/userReducer";
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const changeLanguage = (lang: string) => {
+    dispatch(set({ language: lang }));
+  };
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center w-full">
             <div className="flex-shrink-0">
               <img
                 className="h-8 w-8"
@@ -17,8 +22,8 @@ export default function Nav() {
                 alt="Workflow"
               />
             </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+            <div className="hidden md:flex justify-between items-center w-full">
+              <div className="ml-8 flex items-baseline space-x-4">
                 <a
                   href="#"
                   className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -53,6 +58,19 @@ export default function Nav() {
                 >
                   {t("reports")}
                 </a>
+              </div>
+              <div className="ml-2">
+                <select
+                  className="bg-transparent text-white"
+                  onChange={(e) => changeLanguage(e.target.value)}
+                >
+                  <option className="text-black" value="ar">
+                    {t("arabic")}
+                  </option>
+                  <option className="text-black" value="en" selected>
+                    {t("english")}
+                  </option>
+                </select>
               </div>
             </div>
           </div>

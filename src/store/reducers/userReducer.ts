@@ -9,8 +9,8 @@ const userSlice = createSlice({
     },
   },
   reducers: {
-    set: (state) => {
-      state;
+    set: (state, action) => {
+      state.user = { ...state.user, ...action.payload };
     },
   },
 });
