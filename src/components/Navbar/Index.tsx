@@ -3,6 +3,7 @@ import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { set } from "../../store/reducers/userReducer";
+
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();

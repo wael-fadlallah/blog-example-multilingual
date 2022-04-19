@@ -1,9 +1,10 @@
-import React from "react";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gray-800 h-[50px] text-white flex justify-center items-center">
-      <p>Copyright (c) 2022</p>
+      <p>{t("Copyright (c) 2022")}</p>
     </footer>
   );
 }

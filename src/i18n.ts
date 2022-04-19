@@ -35,6 +35,7 @@ const resources = {
       edit: "تعديل",
       publish: "نشر",
       bag: "حقيبة ظهر",
+      "Copyright (c) 2022": "2022 (c) حقوق النشر  ",
     },
   },
 };

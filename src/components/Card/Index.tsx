@@ -1,14 +1,13 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Card() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="md:flex shadow-lg  mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-64">
       <img
         className="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6"
-        // src="https://ik.imagekit.io/q5edmtudmz/FB_IMG_15658659197157667_wOd8n5yFyXI.jpg"
+        src="https://ik.imagekit.io/q5edmtudmz/FB_IMG_15658659197157667_wOd8n5yFyXI.jpg"
         alt={t("bag")}
       />
       <div className="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
