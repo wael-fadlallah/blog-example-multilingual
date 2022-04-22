@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     i18n.changeLanguage(user.language);
-    userData.save(user);
+    userData.save({ user });
   }, [user]);
 
   return (

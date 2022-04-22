@@ -4,7 +4,8 @@ function get() {
 }
 
 function save(userData: any) {
-  localStorage.setItem("userData", JSON.stringify(userData));
+  const data = localStorage.setItem("userData", JSON.stringify(userData));
+  return data;
 }
 
 export default { get, save };

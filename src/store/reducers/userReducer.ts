@@ -1,12 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import local from "../../service/localStorage";
+
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    user: {
-      isLoggedin: false,
-      language: "en",
-    },
-  },
+  initialState: local.get()
+    ? local.get()
+    : {
+        user: {
+          isLoggedin: false,
+          language: "en",
+        },
+      },
   reducers: {
     set: (state, action) => {
       state.user = { ...state.user, ...action.payload };
