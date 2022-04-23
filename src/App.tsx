@@ -14,6 +14,7 @@ function App() {
     userData.save({ user });
   }, [user]);
 
+  document.body.dir = i18n.dir();
   return (
     <>
       <div className="content">
