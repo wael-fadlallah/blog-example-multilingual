@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../store/reducers/userReducer";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const user = useSelector((state: any) => state.user);
   const changeLanguage = (lang: string) => {
     dispatch(set({ language: lang }));
   };
+
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,10 +67,18 @@ export default function Nav() {
                   className="bg-transparent text-white"
                   onChange={(e) => changeLanguage(e.target.value)}
                 >
-                  <option className="text-black" value="ar">
+                  <option
+                    className="text-black"
+                    value="ar"
+                    selected={user?.language === "en" ? true : false}
+                  >
                     {t("arabic")}
                   </option>
-                  <option className="text-black" value="en" selected>
+                  <option
+                    className="text-black"
+                    value="en"
+                    selected={user?.language === "en" ? true : false}
+                  >
                     {t("english")}
                   </option>
                 </select>
